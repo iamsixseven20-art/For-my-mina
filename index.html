@@ -3,195 +3,232 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For Mina</title>
+  <title>For Mina ♡ Chiikawa</title>
   <style>
     :root {
-      --pink: #ffd6e8;
-      --pink-deep: #f48fb1;
-      --blue: #d6ecff;
-      --lavender: #e6d9ff;
-      --cream: #fffaf2;
-      --text: #4a3f55;
-      --card: rgba(255, 250, 242, 0.94);
+      --bg-pink: #ffd9e8;
+      --bg-lavender: #e6dcff;
+      --bg-blue: #d7eeff;
+      --cream: #fffaf7;
+      --surface: #ffffff;
+      --ink: #493e54;
+      --ink-soft: #6e617c;
+      --pink-pill: #ffc4dc;
+      --pink-border: #ff8fb9;
+      --blue-pill: #c7e6ff;
+      --blue-border: #74bbf5;
+      --lavender-pill: #dcd0ff;
+      --lavender-border: #a68be8;
+      --mint-pill: #d4f5e9;
+      --mint-border: #78cfb0;
+      --shadow: 0 12px 28px rgba(132, 107, 176, 0.16);
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
-      background: linear-gradient(160deg, var(--blue) 0%, var(--lavender) 50%, var(--pink) 100%);
-      color: var(--text);
+      margin: 0;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 18px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(165deg, var(--bg-pink) 0%, var(--bg-lavender) 50%, var(--bg-blue) 100%);
+      padding: 20px 14px 56px;
     }
 
     .app {
-      width: 100%;
-      max-width: 540px;
-      background: var(--card);
-      border: 3px solid #ffffff;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--cream);
+      border: 2.5px solid var(--pink-border);
       border-radius: 28px;
-      box-shadow: 0 14px 35px rgba(112, 86, 138, 0.16);
-      padding: 24px 20px;
+      padding: 22px 18px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
       text-align: center;
+      border-color: var(--lavender-border);
+      background: linear-gradient(180deg, #ffffff 0%, var(--cream) 100%);
     }
 
-    .screen {
-      display: none;
-      animation: fadeIn 0.25s ease;
-    }
-
-    .screen.active {
-      display: block;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h1, h2 {
-      color: #6b4c7a;
-      margin-bottom: 12px;
-      font-size: 1.55rem;
-    }
-
-    p {
-      line-height: 1.65;
-      margin-bottom: 14px;
-      font-size: 1rem;
-    }
-
-    /* Screen 1: Envelope */
-    .envelope-box {
-      background: linear-gradient(145deg, var(--pink), var(--lavender));
-      border: 2px dashed #ffffff;
-      border-radius: 24px;
-      padding: 36px 20px;
-      margin: 16px 0 20px;
-    }
-
-    .envelope-icon {
-      font-size: 4rem;
+    .kaomoji-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue-pill);
+      color: var(--ink);
+      border: 2px solid var(--blue-border);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: 700;
       margin-bottom: 10px;
     }
 
-    .btn {
-      background: linear-gradient(135deg, #ff9ec7, #c7a6ff);
-      color: #ffffff;
-      border: none;
-      border-radius: 999px;
-      padding: 12px 24px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 6px 16px rgba(166, 118, 189, 0.25);
-      text-decoration: none;
-      display: inline-block;
-      white-space: nowrap;
+    .ears {
+      font-weight: 800;
+      letter-spacing: 0.04em;
     }
 
-    .btn.secondary {
-      background: #ece3ff;
-      color: #5c4373;
-      box-shadow: none;
+    h1 {
+      margin: 6px 0 8px;
+      font-size: 1.75rem;
+      line-height: 1.25;
+      color: var(--ink);
     }
 
-    .nav-row {
+    h2 {
+      margin: 0 0 10px;
+      font-size: 1.22rem;
+      line-height: 1.3;
+      color: var(--ink);
+    }
+
+    p {
+      margin: 0 0 12px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+    }
+
+    .pill-row {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pill-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: var(--pink-pill);
+      color: var(--ink);
+      border: 2px solid var(--pink-border);
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.12s ease, filter 0.12s ease;
+    }
+
+    .pill-btn:active {
+      transform: scale(0.98);
+    }
+
+    .pill-btn.blue {
+      background: var(--blue-pill);
+      border-color: var(--blue-border);
+    }
+
+    .pill-btn.lavender {
+      background: var(--lavender-pill);
+      border-color: var(--lavender-border);
+    }
+
+    .pill-btn.mint {
+      background: var(--mint-pill);
+      border-color: var(--mint-border);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .envelope-box {
+      background: var(--surface);
+      border: 2px dashed var(--pink-border);
+      border-radius: 22px;
+      padding: 18px 16px;
+      margin: 12px 0;
+    }
+
+    .letter-text {
+      color: var(--ink);
+      line-height: 1.75;
+      white-space: pre-line;
+      font-size: 0.98rem;
+    }
+
+    .track-stack {
+      display: grid;
+      gap: 10px;
+      margin: 12px 0;
+    }
+
+    .track-pill {
+      display: flex;
+      align-items: center;
       justify-content: space-between;
       gap: 10px;
-      margin-top: 20px;
+      background: var(--surface);
+      border: 2px solid var(--blue-border);
+      border-radius: 999px;
+      padding: 12px 18px;
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
     }
 
-    /* Screen 2: Letter */
-    .letter-paper {
-      background: repeating-linear-gradient(
-        to bottom,
-        #fffdf9 0px,
-        #fffdf9 29px,
-        #f2d9e6 30px
-      );
-      border: 2px solid var(--pink);
-      border-radius: 20px;
-      padding: 20px;
-      text-align: left;
-      max-height: 62vh;
-      overflow-y: auto;
+    .track-pill:nth-child(2) {
+      border-color: var(--pink-border);
+      background: #fff6fa;
     }
 
-    .letter-paper p {
-      margin-bottom: 14px;
+    .track-pill:nth-child(3) {
+      border-color: var(--lavender-border);
+      background: #f8f5ff;
     }
 
-    /* Screen 3: Photo Gallery */
-    .photo-grid {
+    .memories-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
-      margin-top: 14px;
+      margin: 12px 0;
     }
 
-    .photo-card {
-      background: #ffffff;
-      border: 2px solid var(--pink);
-      border-radius: 18px;
+    .memory-card {
+      background: var(--surface);
+      border: 2px solid var(--lavender-border);
+      border-radius: 20px;
       padding: 10px;
+      text-align: center;
     }
 
-    .photo-placeholder {
-      background: var(--blue);
-      border-radius: 12px;
-      height: 140px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      margin-bottom: 8px;
-      font-size: 0.9rem;
-      color: #5a5270;
-    }
-
-    .photo-placeholder img {
+    .memory-card img {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
+      border-radius: 14px;
+      background: var(--bg-blue);
+      display: block;
+      margin-bottom: 8px;
     }
 
-    /* Screen 4: Music */
-    .song-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 14px;
+    .memory-title {
+      display: inline-block;
+      background: var(--pink-pill);
+      border: 1.5px solid var(--pink-border);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink);
     }
 
-    .song-card {
-      background: #ffffff;
-      border: 2px solid var(--lavender);
-      border-radius: 16px;
-      padding: 12px 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      text-align: left;
-    }
-
-    .song-title {
-      font-weight: bold;
-      font-size: 0.96rem;
-      line-height: 1.35;
-    }
-
-    /* Screen 5: Puzzle */
     .puzzle-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -199,195 +236,229 @@
       margin: 14px 0;
     }
 
-    .tile {
-      background: var(--pink);
-      border: 2px solid #ffffff;
-      border-radius: 14px;
-      padding: 16px 8px;
-      font-weight: bold;
-      font-size: 1.1rem;
+    .puzzle-tile {
+      background: var(--pink-pill);
+      border: 2px solid var(--pink-border);
+      border-radius: 999px;
+      padding: 12px 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--ink);
       cursor: pointer;
-      user-select: none;
     }
 
-    .tile.selected {
-      background: var(--lavender);
-      border-color: #7c5295;
+    .puzzle-tile.selected {
+      background: var(--lavender-pill);
+      border-color: var(--lavender-border);
     }
 
-    .infinity {
-      font-size: 4.2rem;
-      color: #e56b9f;
-      margin: 12px 0;
+    .status-banner {
+      background: var(--surface);
+      border: 2px solid var(--mint-border);
+      border-radius: 18px;
+      padding: 10px 14px;
+      font-weight: 700;
+      color: var(--ink);
+      text-align: center;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .final-card {
+      text-align: center;
+      border-color: var(--blue-border);
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg-pink) 100%);
     }
   </style>
 </head>
 <body>
-  <div class="app">
-    <!-- 1. Envelope Screen -->
-    <section class="screen active" id="screen-1">
+  <main class="app">
+    <section class="card hero" id="homeScreen">
+      <div class="kaomoji-tag">
+        <span class="ears">(｡･ω･｡)ﾉ♡</span>
+        <span>Chiikawa Pastel Edition</span>
+      </div>
+      <h1>For Mina ♡</h1>
+      <p>( ´ ▽ ` )ﾉ A soft little pastel corner made for you.</p>
+      <div class="pill-row">
+        <button class="pill-btn" type="button" onclick="openScreen('letterScreen')">✉ Open Letter</button>
+        <button class="pill-btn blue" type="button" onclick="openScreen('musicScreen')">♪ Songs</button>
+        <button class="pill-btn lavender" type="button" onclick="openScreen('memoriesScreen')">✿ Memories</button>
+        <button class="pill-btn mint" type="button" onclick="openScreen('puzzleScreen')">✦ Puzzle</button>
+      </div>
+    </section>
+
+    <section class="card hidden" id="letterScreen">
+      <div class="kaomoji-tag">(｡･ω･｡)♡</div>
+      <h2>Letter for Mina</h2>
       <div class="envelope-box">
-        <div class="envelope-icon">💌</div>
-        <h2>For Mina</h2>
-        <p>A little pastel corner made just for you.</p>
-        <button class="btn" onclick="goToScreen(2)">Open Me</button>
+        <div class="letter-text" id="letterContent">Dear Mina,
+
+( ´ ▽ ` )ﾉ♡
+
+Every moment with you feels brighter and softer. Thank you for being my favorite person.
+
+Forever yours ♡</div>
+      </div>
+      <div class="pill-row">
+        <button class="pill-btn blue" type="button" onclick="openScreen('musicScreen')">Next: Songs →</button>
+        <button class="pill-btn lavender" type="button" onclick="openScreen('homeScreen')">Back</button>
       </div>
     </section>
 
-    <!-- 2. Letter Screen -->
-    <section class="screen" id="screen-2">
-      <h2>A Letter For You</h2>
-      <div class="letter-paper">
-        <p><strong>To Mina,</strong></p>
-        <p>I made this little website because I love you sososo much, more than I could ever explain in just one letter.</p>
-        <p>Being around you makes me happy—you are my safe place, my favorite person to talk to, and the sweetest part of my days. Even if we ever have a bad day or argue, please never worry or wonder where we stand. I would still love you with everything I have, no matter what. A little argument could never change how much I care about you or make me love you any less.</p>
-        <p>If there were a million different universes, I’d still look for you and choose you in every single one. I love you so much, sweetheart, and you never have to carry anything alone when I’m right here with you, gorgeous. I know this isn’t enough to say, but I love you more than you imagine.</p>
+    <section class="card hidden" id="musicScreen">
+      <div class="kaomoji-tag">♪ (o・w・o) ♪</div>
+      <h2>Songs for You</h2>
+      <p>Tap a pill button below to open each track on Spotify.</p>
+      <div class="track-stack">
+        <a class="track-pill" href="https://open.spotify.com/" target="_blank" rel="noopener">
+          <span>♪ Track 1</span>
+          <span>Open Spotify ↗</span>
+        </a>
+        <a class="track-pill" href="https://open.spotify.com/" target="_blank" rel="noopener">
+          <span>♪ Track 2</span>
+          <span>Open Spotify ↗</span>
+        </a>
+        <a class="track-pill" href="https://open.spotify.com/" target="_blank" rel="noopener">
+          <span>♪ Track 3</span>
+          <span>Open Spotify ↗</span>
+        </a>
       </div>
-      <div class="nav-row">
-        <button class="btn secondary" onclick="goToScreen(1)">Back</button>
-        <button class="btn" onclick="goToScreen(3)">Next</button>
+      <div class="pill-row">
+        <button class="pill-btn lavender" type="button" onclick="openScreen('memoriesScreen')">Next: Memories →</button>
+        <button class="pill-btn" type="button" onclick="openScreen('homeScreen')">Back</button>
       </div>
     </section>
 
-    <!-- 3. Photo Gallery Screen -->
-    <section class="screen" id="screen-3">
+    <section class="card hidden" id="memoriesScreen">
+      <div class="kaomoji-tag">✿ (｡♥‿♥｡) ✿</div>
       <h2>Our Favorite Moments</h2>
-      <div class="photo-grid">
-        <div class="photo-card">
-          <div class="photo-placeholder">
-            <img src="IMG_1917.jpeg" alt="Memory 1" />
-          </div>
-          <small>Memory #1</small>
+      <div class="memories-grid">
+        <div class="memory-card">
+          <img src="IMG_1917.jpeg" alt="Memory 1" />
+          <span class="memory-title">Memory #1</span>
         </div>
-        <div class="photo-card">
-          <div class="photo-placeholder">
-            <img src="IMG_1926.jpeg" alt="Memory 2" />
-          </div>
-          <small>Memory #2</small>
+        <div class="memory-card">
+          <img src="IMG_1926.jpeg" alt="Memory 2" />
+          <span class="memory-title">Memory #2</span>
         </div>
-        <div class="photo-card">
-          <div class="photo-placeholder">
-            <img src="IMG_1919.jpeg" alt="Memory 3" />
-          </div>
-          <small>Memory #3</small>
+        <div class="memory-card">
+          <img src="IMG_1919.jpeg" alt="Memory 3" />
+          <span class="memory-title">Memory #3</span>
         </div>
-        <div class="photo-card">
-          <div class="photo-placeholder">
-            <img src="IMG_1916.jpeg" alt="Memory 4" />
-          </div>
-          <small>Memory #4</small>
+        <div class="memory-card">
+          <img src="IMG_1916.jpeg" alt="Memory 4" />
+          <span class="memory-title">Memory #4</span>
         </div>
-        <div class="photo-card">
-          <div class="photo-placeholder">
-            <img src="IMG_1907.jpeg" alt="Memory 5" />
-          </div>
-          <small>Memory #5</small>
+        <div class="memory-card">
+          <img src="IMG_1907.jpeg" alt="Memory 5" />
+          <span class="memory-title">Memory #5</span>
         </div>
-        <div class="photo-card">
-          <div class="photo-placeholder">
-            <img src="IMG_1925.jpeg" alt="Memory 6" />
-          </div>
-          <small>Memory #6</small>
+        <div class="memory-card">
+          <img src="IMG_1925.jpeg" alt="Memory 6" />
+          <span class="memory-title">Memory #6</span>
         </div>
       </div>
-      <div class="nav-row">
-        <button class="btn secondary" onclick="goToScreen(2)">Back</button>
-        <button class="btn" onclick="goToScreen(4)">Next</button>
+      <div class="pill-row">
+        <button class="pill-btn mint" type="button" onclick="openScreen('puzzleScreen')">Next: Puzzle →</button>
+        <button class="pill-btn lavender" type="button" onclick="openScreen('homeScreen')">Back</button>
       </div>
     </section>
 
-    <!-- 4. Music Screen -->
-    <section class="screen" id="screen-4">
-      <h2>Songs That Remind Me of Us</h2>
-      <div class="song-list">
-        <div class="song-card">
-          <div class="song-title">Demolition Lovers</div>
-          <a class="btn" href="https://open.spotify.com/track/16Fp67kTFhH0XK5Cl6Oz7r?si=jr6zOstCTzu84hl8GdFuVA&utm_source=copy-link&rowId=6bf33ffa8024fa61" target="_blank" rel="noopener">Spotify</a>
-        </div>
-        <div class="song-card">
-          <div class="song-title">Champagne Coast</div>
-          <a class="btn" href="https://open.spotify.com/track/2kSGp5ZmO7u1Ine84Rx0w1?si=Hld6Rgk8QkKp1iLpxl1F3Q&utm_source=copy-link&rowId=d1cf6d55e0160eac" target="_blank" rel="noopener">Spotify</a>
-        </div>
-        <div class="song-card">
-          <div class="song-title">I'm On Low Gas and You Need a Jacket</div>
-          <a class="btn" href="https://open.spotify.com/track/40WWeoX26jtsfdmFx5iRty?si=ufK0h2SkRAuApdYThlrP0A&utm_source=copy-link&rowId=101fd6460a347b81" target="_blank" rel="noopener">Spotify</a>
-        </div>
-      </div>
-      <div class="nav-row">
-        <button class="btn secondary" onclick="goToScreen(3)">Back</button>
-        <button class="btn" onclick="goToScreen(5)">Next</button>
-      </div>
-    </section>
-
-    <!-- 5. Puzzle Screen -->
-    <section class="screen" id="screen-5">
-      <h2>I LOVE YOU Puzzle</h2>
-      <p>Tap two tiles to swap them and spell <strong>I LOVE YOU</strong>.</p>
+    <section class="card hidden" id="puzzleScreen">
+      <div class="kaomoji-tag">✦ (｡•̀ᴗ-)✧ ✦</div>
+      <h2>Secret Message Puzzle</h2>
+      <p>Tap any two pill tiles to swap them.</p>
       <div class="puzzle-grid" id="puzzleGrid"></div>
-      <p id="puzzleStatus"></p>
-      <button class="btn secondary" onclick="resetPuzzle()">Reset Puzzle</button>
-      <div class="nav-row">
-        <button class="btn secondary" onclick="goToScreen(4)">Back</button>
-        <button class="btn" onclick="goToScreen(6)">Next</button>
+      <div class="status-banner" id="puzzleStatus"></div>
+      <div class="pill-row">
+        <button class="pill-btn lavender" type="button" onclick="resetPuzzle()">Reset</button>
+        <button class="pill-btn blue" type="button" onclick="openScreen('finalScreen')">Finish ♡</button>
+        <button class="pill-btn" type="button" onclick="openScreen('homeScreen')">Back</button>
       </div>
     </section>
 
-    <!-- 6. Final Screen -->
-    <section class="screen" id="screen-6">
-      <div class="infinity">∞</div>
-      <h2>I'll love you for eternity</h2>
-      <p>In every universe, always.</p>
-      <button class="btn" onclick="goToScreen(1)">Replay</button>
+    <section class="card final-card hidden" id="finalScreen">
+      <div class="kaomoji-tag">(｡･ω･｡)ﾉ♡</div>
+      <h2>For Mina ♡</h2>
+      <p>( ´ ▽ ` )ﾉ Thank you for looking through everything!</p>
+      <div class="pill-row">
+        <button class="pill-btn" type="button" onclick="replayAll()">Replay</button>
+      </div>
     </section>
-  </div>
+  </main>
 
   <script>
-    function goToScreen(num) {
-      document.querySelectorAll(".screen").forEach((el) => el.classList.remove("active"));
-      document.getElementById("screen-" + num).classList.add("active");
+    const screenIds = [
+      'homeScreen',
+      'letterScreen',
+      'musicScreen',
+      'memoriesScreen',
+      'puzzleScreen',
+      'finalScreen'
+    ];
+
+    function openScreen(targetId) {
+      screenIds.forEach((id) => {
+        const node = document.getElementById(id);
+        if (node) {
+          node.classList.toggle('hidden', id !== targetId);
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    const targetPhrase = ["I", "L", "O", "V", "E", "Y", "O", "U", "!"];
-    let tiles = [];
+    function replayAll() {
+      resetPuzzle();
+      openScreen('homeScreen');
+    }
+
+    const solvedWords = ['I', 'LOVE', 'YOU', 'SO', 'MUCH', 'MINA'];
+    let currentWords = ['YOU', 'MINA', 'I', 'MUCH', 'LOVE', 'SO'];
     let selectedIndex = null;
 
-    function resetPuzzle() {
-      tiles = [...targetPhrase].sort(() => Math.random() - 0.5);
-      selectedIndex = null;
-      document.getElementById("puzzleStatus").textContent = "";
-      renderPuzzle();
-    }
-
     function renderPuzzle() {
-      const grid = document.getElementById("puzzleGrid");
-      grid.innerHTML = "";
-      tiles.forEach((char, idx) => {
-        const div = document.createElement("div");
-        div.className = "tile" + (selectedIndex === idx ? " selected" : "");
-        div.textContent = char;
-        div.onclick = () => handleTileClick(idx);
-        grid.appendChild(div);
+      const grid = document.getElementById('puzzleGrid');
+      const status = document.getElementById('puzzleStatus');
+      grid.innerHTML = '';
+
+      currentWords.forEach((word, index) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'puzzle-tile' + (selectedIndex === index ? ' selected' : '');
+        btn.textContent = word;
+        btn.onclick = () => selectTile(index);
+        grid.appendChild(btn);
       });
+
+      if (currentWords.join(' ') === solvedWords.join(' ')) {
+        status.textContent = '(｡♥‿♥｡) I LOVE YOU SO MUCH MINA ♡';
+      } else {
+        status.textContent = currentWords.join(' ');
+      }
     }
 
-    function handleTileClick(idx) {
+    function selectTile(index) {
       if (selectedIndex === null) {
-        selectedIndex = idx;
-      } else if (selectedIndex === idx) {
-        selectedIndex = null;
+        selectedIndex = index;
       } else {
-        const temp = tiles[selectedIndex];
-        tiles[selectedIndex] = tiles[idx];
-        tiles[idx] = temp;
+        const temp = currentWords[selectedIndex];
+        currentWords[selectedIndex] = currentWords[index];
+        currentWords[index] = temp;
         selectedIndex = null;
       }
       renderPuzzle();
-      if (tiles.join("") === targetPhrase.join("")) {
-        document.getElementById("puzzleStatus").textContent = "You spelled I LOVE YOU! ♡";
-      }
     }
 
-    resetPuzzle();
+    function resetPuzzle() {
+      currentWords = ['YOU', 'MINA', 'I', 'MUCH', 'LOVE', 'SO'];
+      selectedIndex = null;
+      renderPuzzle();
+    }
+
+    renderPuzzle();
   </script>
 </body>
 </html>
